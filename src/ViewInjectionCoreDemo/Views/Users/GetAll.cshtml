@@ -1,0 +1,35 @@
+﻿@inject ViewInjectionCoreDemo.Repositories.IUserRepository userRepo
+
+<h2>All Users</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Date of Birth
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in userRepo.GetAll())
+        {
+            <tr>
+                <td>
+                    @user.FirstName
+                </td>
+                <td>
+                    @user.LastName
+                </td>
+                <td>
+                    @user.DateOfBirth
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
